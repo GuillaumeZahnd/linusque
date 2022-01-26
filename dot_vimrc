@@ -1,0 +1,80 @@
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" General interface
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Show line numbers
+set number
+
+" Use syntax coloring
+syntax on
+
+" Draw a horizontal line at the cursor location
+set cursorline
+
+" Enable copy/paste across different windows (require installing "vim-athena")
+set clipboard=unnamed
+
+" Do not wrap lines
+set nowrap
+
+" Draw a vertical line after the 120-th character
+set colorcolumn=121
+highlight ColorColumn ctermbg=96
+
+" Mark trailing whitespaces
+set listchars=trail:·
+set list
+highlight ws ctermbg=166
+match ws /\s\+$/
+autocmd BufWinEnter * match ws /\s\+$/
+
+" Show ruler
+set ruler
+
+" Set utf8 as standard encoding
+set encoding=utf-8
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Tabs and indentation
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Use spaces instead of tabs
+set expandtab
+
+" Set the number of spaces inserted for indentation
+set shiftwidth=2
+set tabstop=2
+set softtabstop=2
+set smarttab
+
+" Set auto indent and smart indent
+set ai
+set si
+
+" Mark indentations (when using spaces instead of tabs) (https://github.com/Yggdroot/indentLine)
+let g:indentLine_char_list=['|', '¦', '┆', '┊']
+let g:indentLine_color_term=96
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Search
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Mark searched words with a "LightGreen" background and a "Black" font color
+set hlsearch
+hi Search ctermbg=LightGreen
+hi Search ctermfg=Black
+
+" Mark the matching targets while the searched words are being typed
+set incsearch
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Spell check
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Toggle spell check on/off via "\s", mark miss-spelled words with a "Darkred" background and a "Black" font color
+map <leader>s :setlocal spell! spelllang=en_us<cr>
+hi Spellbad ctermbg=Darkred
+hi Spellbad ctermfg=Black
