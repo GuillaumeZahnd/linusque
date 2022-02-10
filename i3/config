@@ -1,0 +1,189 @@
+# (located within ~/.config/i3/)
+
+
+# ----------------------------------------------------------------
+# Essentials
+# ----------------------------------------------------------------
+
+# Set the modifier  key
+set $mod Mod4
+
+# Start a terminal
+bindsym $mod+Return exec i3-sensible-terminal
+
+# Kill focused window
+bindsym $mod+Shift+q kill
+
+# Start dmenu
+bindsym $mod+d exec dmenu_run
+
+# Exit i3 and terminate the X session
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'So this is goodbye?' -b 'Yes, exit i3' 'i3-msg exit'"
+
+
+# ----------------------------------------------------------------
+# Windows and containers
+# ----------------------------------------------------------------
+
+# Change focus
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Move focused window
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# Split along horizontal orientation
+bindsym $mod+h split h
+
+# Split along vertical orientation
+bindsym $mod+v split v
+
+# Toggle fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# Change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+z layout tabbed
+bindsym $mod+e layout toggle split
+
+# Toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# Change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# Focus on the parent container
+bindsym $mod+q focus parent
+
+# Focus on the child container
+bindsym $mod+g focus child
+
+# Resize window (using keys instead of the mouse)
+bindsym $mod+r mode "resize"
+mode "resize" {
+  bindsym Left resize shrink width 10 px or 10 ppt  # shrink the width
+  bindsym Right resize grow width 10 px or 10 ppt   # grow the width
+  bindsym Down resize shrink height 10 px or 10 ppt # shrink the height
+  bindsym Up resize grow height 10 px or 10 ppt     # grow the height
+  bindsym Return mode "default"                     # exit the resize mode
+  bindsym Escape mode "default"                     # exit the resier more
+}
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+
+# ----------------------------------------------------------------
+# Workspaces and containers
+# ----------------------------------------------------------------
+
+# Switch to workspace "n"
+bindsym $mod+ampersand workspace 1
+bindsym $mod+eacute workspace 2
+bindsym $mod+quotedbl workspace 3
+bindsym $mod+apostrophe workspace 4
+bindsym $mod+parenleft workspace 5
+bindsym $mod+minus workspace 6
+bindsym $mod+egrave workspace 7
+bindsym $mod+underscore workspace 8
+bindsym $mod+ccedilla workspace 9
+bindsym $mod+agrave workspace 10
+
+# Move focused container to workspace "n"
+bindsym $mod+Shift+ampersand move container to workspace 1
+bindsym $mod+Shift+eacute move container to workspace 2
+bindsym $mod+Shift+quotedbl move container to workspace 3
+bindsym $mod+Shift+apostrophe move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+minus move container to workspace 6
+bindsym $mod+Shift+egrave move container to workspace 7
+bindsym $mod+Shift+underscore move container to workspace 8
+bindsym $mod+Shift+ccedilla move container to workspace 9
+bindsym $mod+Shift+agrave move container to workspace 10
+
+# Move focused workspace to the next output on the left
+bindsym $mod+l move workspace to output left
+
+# Move focused workspace to the next output on the right
+bindsym $mod+m move workspace to output right
+
+
+# ----------------------------------------------------------------
+# Applications shortcuts
+# ----------------------------------------------------------------
+
+bindsym $mod+p exec xfce4-screenshooter # take screenshot
+bindsym $mod+F1 exec amixer sset 'Master' 5%- # increase sound
+bindsym $mod+F2 exec amixer sset 'Master' 5%+ # increase sound
+bindsym $mod+F3 exec pactl set-sink-mute @DEFAULT_SINK@ toggle # mute sound
+
+bindsym $mod+F10 exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
+# spotify previous (the command above does not accept end-of-line comments) ---------------------------------------------------------------^^^^^^^^
+bindsym $mod+F11 exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
+# spotify next (the command above does not accept end-of-line comments) -------------------------------------------------------------------^^^^
+bindsym $mod+F12 exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
+# spotify toggle play/pause (the command above does not accept end-of-line comments) ------------------------------------------------------^^^^^^^^^
+
+
+# ----------------------------------------------------------------
+# Other shortcuts
+# ----------------------------------------------------------------
+
+# Display the i3bar (located in /etc/i3status.conf)
+bar {
+  status_command i3status
+}
+
+# Reload the configuration file
+bindsym $mod+Shift+c reload
+
+# Restart i3 inplace (preserve the layout/session)
+bindsym $mod+Shift+r restart
+
+# Font for window titles
+font pango:monospace 8
+
+
+# ----------------------------------------------------------------
+# Startup routine
+# ----------------------------------------------------------------
+exec_always --no-startup-id xsetroot -solid '#000000'         # black desktop background
+exec_always --no-startup-id numlockx on                       # activate numlock (useless when using a 65% keeb)
+exec /home/guillaume/LINUX/mouse_btn_132/xmodmap_on.sh        # swap mouse buttons
+exec /home/guillaume/LINUX/i3/three-monitors-arandr-layout.sh # set the left/center/right monitors
+# 1
+exec --no-startup-id i3-msg 'workspace 1; append_layout /home/guillaume/.config/i3/workspace-1.json'
+exec --no-startup-id i3-msg 'sh -c sleep 10'
+exec --no-startup-id i3-msg 'workspace 1; exec firefox'
+# 2
+exec --no-startup-id i3-msg 'workspace 2; append_layout /home/guillaume/.config/i3/workspace-2.json'
+exec --no-startup-id i3-msg 'sh -c sleep 10'
+exec --no-startup-id i3-msg 'workspace 2; exec i3-sensible-terminal'
+exec --no-startup-id i3-msg 'workspace 2; exec i3-sensible-terminal'
+# 3
+exec --no-startup-id i3-msg 'workspace 3; append_layout /home/guillaume/.config/i3/workspace-3.json'
+exec --no-startup-id i3-msg 'sh -c sleep 10'
+exec --no-startup-id i3-msg 'workspace 3; exec i3-sensible-terminal'
+exec --no-startup-id i3-msg 'workspace 3; exec i3-sensible-terminal'
+# 4
+exec --no-startup-id i3-msg 'workspace 4; append_layout /home/guillaume/.config/i3/workspace-4.json'
+exec --no-startup-id i3-msg 'sh -c sleep 10'
+exec --no-startup-id i3-msg 'workspace 4; exec thunar'
+exec --no-startup-id i3-msg 'workspace 4; exec thunar'
+exec --no-startup-id i3-msg 'workspace 4; exec thunar'
+exec --no-startup-id i3-msg 'workspace 4; exec thunar'
+# 5
+exec --no-startup-id i3-msg 'workspace 5; append_layout /home/guillaume/.config/i3/workspace-5.json'
+exec --no-startup-id i3-msg 'sh -c sleep 10'
+exec --no-startup-id i3-msg 'workspace 5; exec i3-sensible-terminal'
+exec --no-startup-id i3-msg 'workspace 5; exec i3-sensible-terminal'
+# 6
+exec --no-startup-id i3-msg 'workspace 6; append_layout /home/guillaume/.config/i3/workspace-6.json'
+exec --no-startup-id i3-msg 'sh -c sleep 10'
+exec --no-startup-id i3-msg 'workspace 6; exec i3-sensible-terminal'
+exec --no-startup-id i3-msg 'workspace 6; exec i3-sensible-terminal'
