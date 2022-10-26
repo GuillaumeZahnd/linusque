@@ -8,6 +8,7 @@
 
 ```sudo lshw -C display```<br>
 ```lspci | grep VGA```<br>
+```lspci | grep -i nvidia```<br>
 ```lsmod | grep nouveau``` (shows where Ubuntu is using the open-source Nouveau drivers)<br>
 ```lsmod | grep nvidia``` (shows where Ubuntu is using the proprietary NVIDIA drivers)<br>
 
@@ -22,3 +23,8 @@
 ### Simple listing of the current folder content
 
 ```find . -printf "%f\n" | sort```
+
+### Add a user
+
+sudo useradd -s /bin/bash -d /home/<username>/ -m <username><br>
+sudo passwd <username>

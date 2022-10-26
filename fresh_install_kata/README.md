@@ -3,10 +3,10 @@
 ### Update, upgrade, autoremove
 
 ```sudo apt update```<br>
-```sudo apt updade```<br>
+```sudo apt upgrade```<br>
+```sudo apt install build-essential```<br>
 ```sudo apt autoremove```
-
-### Reboot
+```sudo reboot```
 
 ### Install and configure i3
 
@@ -16,7 +16,8 @@ Edit `~.config/i3/config`
 ### Install and configure vim
 
 ```sudo apt install vim vim-athena```<br>
-Create and edit `~/.vimrc` and `/root/.vimrc`
+Create and edit `~/.vimrc` and ``<br>
+```sudo cp ~/.vimrc /root/.vimrc```
 
 ### Install (core)
 
@@ -41,5 +42,12 @@ Create and edit `~/.vimrc` and `/root/.vimrc`
 ### Install NVIDIA drivers on Ubuntu
 
 ```ubuntu-drivers devices```<br>
-```sudo ubuntu-drivers autoinstall``` or ```sudo ubuntu-drivers nvidia-drivers-<version>```
+```sudo ubuntu-drivers autoinstall``` or ```sudo ubuntu-drivers nvidia-drivers-<version>```<br>
+```sudo reboot```
+
+### Install the CUDA toolkit
+
+- https://docs.nvidia.com/cuda/cuda-installation-guide-linux
+- https://developer.nvidia.com/cuda-downloads
+
 ```sudo reboot```
