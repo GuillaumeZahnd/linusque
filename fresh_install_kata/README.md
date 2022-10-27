@@ -1,5 +1,19 @@
 # Fresh install kata
 
+### Bootable USB drive
+
+- usb-creator-gtk
+- UNetbootin
+
+### Partitioning
+
+- `/`: ext4, 50-100GB, Primary, Beginning of this space
+- `/home`: ext4, Primary, Beginning of this space
+- `swap`: (obsolete, now replaced by a "swap" file within "/root")
+- `efi`: 650MB, Primary, Beginning of this space
+
+To boot from USB: Go to BIOS and change "Legacy" to "UEFI"
+
 ### Update, upgrade, autoremove
 
 ```sudo apt update```<br>
@@ -29,8 +43,6 @@ Create and edit `~/.vimrc`<br>
 
 ### Install (dev)
 
-```sudo apt install pipenv```
-
 ### Enable remore SSH connection
 
 ```sudo apt install openssh-server```
@@ -52,15 +64,31 @@ Create and edit `~/.vimrc`<br>
 
 ```sudo reboot```
 
-
 Try:<br>
 ```nvcc -V```<br>
 If the command is not recognized and the following error message shows up:
-> Command 'nvcc' not found, but can be installed with:
+> Command 'nvcc' not found, but can be installed with:<br>
 > sudo apt install nvidia-cuda-toolkit
 
 Append:<br>
 ```export PATH="/usr/local/cuda/bin:$PATH"```<br>
 ```export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"```<br>
+To `~/.bashrc`
+
+### Install pip
+
+```sudo apt install python3-pip```
+
+### Install pipenv
+
+```python3 -m pip install --user pipenv```<br>
+Try:<br>
+```pipenv --version```<br>
+If the command is not recognized and the following error message shows up:
+> Command 'pipenv' not found, but can be installed with:<br>
+> sudo apt install pipenv
+
+Append:<br>
+```export PATH="${HOME}/.local/bin:$PATH"```<br>
 To `~/.bashrc`
 
