@@ -26,5 +26,5 @@
 
 ### Add a user
 
-sudo useradd -s /bin/bash -d /home/<username>/ -m <username><br>
-sudo passwd <username>
+```sudo useradd -s /bin/bash -d /home/<username>/ -m <username>```<br>
+```sudo passwd <username>```

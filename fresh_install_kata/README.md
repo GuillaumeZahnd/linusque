@@ -5,7 +5,7 @@
 ```sudo apt update```<br>
 ```sudo apt upgrade```<br>
 ```sudo apt install build-essential```<br>
-```sudo apt autoremove```
+```sudo apt autoremove```<br>
 ```sudo reboot```
 
 ### Install and configure i3
@@ -16,7 +16,7 @@ Edit `~.config/i3/config`
 ### Install and configure vim
 
 ```sudo apt install vim vim-athena```<br>
-Create and edit `~/.vimrc` and ``<br>
+Create and edit `~/.vimrc`
 ```sudo cp ~/.vimrc /root/.vimrc```
 
 ### Install (core)
