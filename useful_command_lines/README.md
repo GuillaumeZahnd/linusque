@@ -11,6 +11,7 @@
 ```lspci | grep -i nvidia```<br>
 ```lsmod | grep nouveau``` (shows where Ubuntu is using the open-source Nouveau drivers)<br>
 ```lsmod | grep nvidia``` (shows where Ubuntu is using the proprietary NVIDIA drivers)<br>
+```nvidia-smi```
 
 ### Search for a string
 

@@ -17,9 +17,9 @@ To boot from USB: Go to BIOS and change "Legacy" to "UEFI"
 ### Update, upgrade, autoremove
 
 ```sudo apt update```<br>
-```sudo apt upgrade```<br>
-```sudo apt install build-essential```<br>
+```sudo apt full-upgrade```<br>
 ```sudo apt autoremove```<br>
+```sudo apt autoclean```<br>
 ```sudo reboot```
 
 ### Install and configure i3
@@ -33,15 +33,25 @@ Edit `~.config/i3/config`
 Create and edit `~/.vimrc`<br>
 ```sudo cp ~/.vimrc /root/.vimrc```
 
+### Install Git
+
+```sudo apt install git```
+
 ### Install (core)
 
-```sudo apt install git nemo net-tools```
+```sudo apt install nemo net-tools```
 
 ### Install (utils)
 
 ```sudo apt install gimp inkscape meld```
 
-### Install (dev)
+### Install development tools
+
+```sudo apt install build-essential```
+
+### Install Python 3
+
+```sudo apt install python3 python3-wheel python3-pip python3-venv python3-dev python3-setuptools```
 
 ### Enable remore SSH connection
 
@@ -74,6 +84,12 @@ Append:<br>
 ```export PATH="/usr/local/cuda/bin:$PATH"```<br>
 ```export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"```<br>
 To `~/.bashrc`
+
+### Install cuDNN
+
+- https://developer.nvidia.com/cudnn
+- https://developer.nvidia.com/rdp/cudnn-archive
+
 
 ### Install pip
 
