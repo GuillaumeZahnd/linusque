@@ -16,7 +16,7 @@ Edit `~.config/i3/config`
 ### Install and configure vim
 
 ```sudo apt install vim vim-athena```<br>
-Create and edit `~/.vimrc`
+Create and edit `~/.vimrc`<br>
 ```sudo cp ~/.vimrc /root/.vimrc```
 
 ### Install (core)
@@ -51,3 +51,16 @@ Create and edit `~/.vimrc`
 - https://developer.nvidia.com/cuda-downloads
 
 ```sudo reboot```
+
+
+Try:<br>
+```nvcc -V```<br>
+If the command is not recognized and the following error message shows up:
+> Command 'nvcc' not found, but can be installed with:
+> sudo apt install nvidia-cuda-toolkit
+
+Append:<br>
+```export PATH="/usr/local/cuda/bin:$PATH"```<br>
+```export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"```<br>
+To `~/.bashrc`
+
