@@ -1,31 +1,45 @@
-# Useful command lines
+# Guide: Useful command lines
 
 ### Check SSH status
 
-```systemctl status ssh```
+```sh
+systemctl status ssh
+```
 
 ### Show information about the GPU
 
-```sudo lshw -C display```<br>
-```lspci | grep VGA```<br>
-```lspci | grep -i nvidia```<br>
-```lsmod | grep nouveau``` (shows where Ubuntu is using the open-source Nouveau drivers)<br>
-```lsmod | grep nvidia``` (shows where Ubuntu is using the proprietary NVIDIA drivers)<br>
-```nvidia-smi```
+```sh
+sudo lshw -C display
+lspci | grep VGA
+lspci | grep -i nvidia
+nvidia-smi
+```
+
+### Show where the open-source Nouveau drivers or the proprietary NVIDIA drivers are used
+```sh
+lsmod | grep nouveau
+lsmod | grep nvidia
+```
 
 ### Search for a string
 
-```grep -rn "<string>" <file(s)>```<br>
-```n```: show line number<br>
-```r```: recursive search<br>
-```i```: ignore case sensitivity<br>
-```w```: whole words only
+```sh
+grep -rn "<string>" <file(s)>
+```
+`n`: show line number<br>
+`r`: recursive search<br>
+`i`: ignore case sensitivity<br>
+`w`: whole words only
 
 ### Simple listing of the current folder content
 
-```find . -printf "%f\n" | sort```
+```sh
+find . -printf "%f\n" | sort
+```
 
 ### Add a user
 
-```sudo useradd -s /bin/bash -d /home/<username>/ -m <username>```<br>
-```sudo passwd <username>```
+```sh
+sudo useradd -s /bin/bash -d /home/<username>/ -m <username>
+sudo passwd <username>
+```

@@ -1,4 +1,6 @@
-# Fresh install kata
+# Guide: Fresh install kata
+
+---
 
 ### Before installation: Create a bootable USB drive
 
@@ -20,11 +22,13 @@ To boot from USB: Go to BIOS and change from "Legacy" to "UEFI"
 
 ## After installation: Update, upgrade, autoremove
 
-```sudo apt update```<br>
-```sudo apt full-upgrade```<br>
-```sudo apt autoremove```<br>
-```sudo apt autoclean```<br>
-```sudo reboot```
+```sh
+sudo apt update
+sudo apt full-upgrade
+sudo apt autoremove
+sudo apt autoclean
+sudo reboot
+```
 
 ---
 
@@ -32,38 +36,56 @@ To boot from USB: Go to BIOS and change from "Legacy" to "UEFI"
 
 ### Install and configure i3
 
-```sudo apt install i3```<br>
+```sh
+sudo apt install i3
+```
 Edit `~.config/i3/config`
 
 ### Install and configure vim
 
-```sudo apt install vim vim-athena```<br>
+```sh
+sudo apt install vim vim-athena
+```
 Create and edit `~/.vimrc`<br>
-```sudo cp ~/.vimrc /root/.vimrc```
+```sh
+sudo cp ~/.vimrc /root/.vimrc
+```
 
 ### Install Git
 
-```sudo apt install git```
+```sh
+sudo apt install git
+```
 
 ### Install (core)
 
-```sudo apt install nemo net-tools```
+```sh
+sudo apt install nemo net-tools
+```
 
 ### Install (utils)
 
-```sudo apt install gimp inkscape meld```
+```sh
+sudo apt install gimp inkscape meld
+```
 
 ### Install development tools
 
-```sudo apt install build-essential```
+```sh
+sudo apt install build-essential
+```
 
 ### Enable remore SSH connection
 
-```sudo apt install openssh-server```
+```sh
+sudo apt install openssh-server
+```
 
 ### Install the Samba protocol to mount network drives
 
-```sudo apt install cifs-utils smbclient```
+```sh
+sudo apt install cifs-utils smbclient
+```
 
 ---
 
@@ -71,13 +93,21 @@ Create and edit `~/.vimrc`<br>
 
 ### Install Python 3
 
-```sudo apt install python3 python3-wheel python3-pip python3-venv python3-dev python3-setuptools```
+```sh
+sudo apt install python3 python3-wheel python3-pip python3-venv python3-dev python3-setuptools
+```
 
 ### Install NVIDIA drivers on Ubuntu
 
-```ubuntu-drivers devices```<br>
-```sudo ubuntu-drivers autoinstall``` or ```sudo ubuntu-drivers nvidia-drivers-<version>```<br>
-```sudo reboot```
+```sh
+ubuntu-drivers devices
+sudo ubuntu-drivers autoinstall
+sudo reboot
+```
+Note: instead of `autoinstall`, a specific version can be selected:
+```sh
+sudo ubuntu-drivers nvidia-drivers-<version>
+```
 
 ### Install the CUDA toolkit
 
@@ -86,17 +116,23 @@ Create and edit `~/.vimrc`<br>
 - https://developer.nvidia.com/cuda-toolkit-archive
 - https://docs.nvidia.com/cuda/cuda-installation-guide-linux (comprehensive guide)
 
-```sudo reboot```
+```sh
+sudo reboot
+```
 
-Try:<br>
-```nvcc -V```<br>
+Try:
+```sh
+nvcc -V
+```
 If the command is not recognized and the following error message shows up:
-> Command 'nvcc' not found, but can be installed with:<br>
+> Command 'nvcc' not found, but can be installed with:
 > sudo apt install nvidia-cuda-toolkit
 
-Append:<br>
-```export PATH="/usr/local/cuda/bin:$PATH"```<br>
-```export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"```<br>
+Append:
+```sh
+export PATH="/usr/local/cuda/bin:$PATH"
+export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
+```
 To `~/.bashrc`
 
 ### Install cuDNN
@@ -106,22 +142,32 @@ To `~/.bashrc`
 - https://docs.nvidia.com/cuda/cuda-installation-guide-linux (comprehensive guide)
 - https://docs.nvidia.com/deeplearning/cudnn/support-matrix/index.html (shows association between "cuDNN Package" and "CUDA Toolkit Version")
 
-```sudo reboot```
+```sh
+sudo reboot
+```
 
 ### Install pip
 
-```sudo apt install python3-pip```
+```sh
+sudo apt install python3-pip
+```
 
 ### Install pipenv
 
-```python3 -m pip install --user pipenv```<br>
-Try:<br>
-```pipenv --version```<br>
+```sh
+python3 -m pip install --user pipenv
+```
+Try:
+```sh
+pipenv --version
+```
 If the command is not recognized and the following error message shows up:
-> Command 'pipenv' not found, but can be installed with:<br>
+> Command 'pipenv' not found, but can be installed with:
 > sudo apt install pipenv
 
-Append:<br>
-```export PATH="${HOME}/.local/bin:$PATH"```<br>
+Append:
+```sh
+export PATH="${HOME}/.local/bin:$PATH"
+```
 To `~/.bashrc`
 
