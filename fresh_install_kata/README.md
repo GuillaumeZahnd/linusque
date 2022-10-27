@@ -1,26 +1,34 @@
 # Fresh install kata
 
-### Bootable USB drive
+### Before installation: Create a bootable USB drive
 
 - usb-creator-gtk
 - UNetbootin
 
-### Partitioning
+---
+
+### During installation: Apply partitioning
 
 - `/`: ext4, 50-100GB, Primary, Beginning of this space
 - `/home`: ext4, Primary, Beginning of this space
 - `swap`: (obsolete, now replaced by a "swap" file within "/root")
 - `efi`: 650MB, Primary, Beginning of this space
 
-To boot from USB: Go to BIOS and change "Legacy" to "UEFI"
+To boot from USB: Go to BIOS and change from "Legacy" to "UEFI"
 
-### Update, upgrade, autoremove
+---
+
+## After installation: Update, upgrade, autoremove
 
 ```sudo apt update```<br>
 ```sudo apt full-upgrade```<br>
 ```sudo apt autoremove```<br>
 ```sudo apt autoclean```<br>
 ```sudo reboot```
+
+---
+
+## Misc.
 
 ### Install and configure i3
 
@@ -49,17 +57,21 @@ Create and edit `~/.vimrc`<br>
 
 ```sudo apt install build-essential```
 
-### Install Python 3
-
-```sudo apt install python3 python3-wheel python3-pip python3-venv python3-dev python3-setuptools```
-
 ### Enable remore SSH connection
 
 ```sudo apt install openssh-server```
 
-### Mount network drives
+### Install the Samba protocol to mount network drives
 
 ```sudo apt install cifs-utils smbclient```
+
+---
+
+## Deep learning
+
+### Install Python 3
+
+```sudo apt install python3 python3-wheel python3-pip python3-venv python3-dev python3-setuptools```
 
 ### Install NVIDIA drivers on Ubuntu
 
@@ -69,8 +81,10 @@ Create and edit `~/.vimrc`<br>
 
 ### Install the CUDA toolkit
 
-- https://docs.nvidia.com/cuda/cuda-installation-guide-linux
+- https://pytorch.org/get-started/locally/ (verify first the compatible versions of PyTorch with the CUDA toolkit)
 - https://developer.nvidia.com/cuda-downloads
+- https://developer.nvidia.com/cuda-toolkit-archive
+- https://docs.nvidia.com/cuda/cuda-installation-guide-linux (comprehensive guide)
 
 ```sudo reboot```
 
@@ -89,7 +103,10 @@ To `~/.bashrc`
 
 - https://developer.nvidia.com/cudnn
 - https://developer.nvidia.com/rdp/cudnn-archive
+- https://docs.nvidia.com/cuda/cuda-installation-guide-linux (comprehensive guide)
+- https://docs.nvidia.com/deeplearning/cudnn/support-matrix/index.html (shows association between "cuDNN Package" and "CUDA Toolkit Version")
 
+```sudo reboot```
 
 ### Install pip
 
