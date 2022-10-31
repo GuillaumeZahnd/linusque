@@ -6,12 +6,22 @@
 systemctl status ssh
 ```
 
-### Show information about the GPU
+### Show display and graphics hardware
 
 ```sh
 sudo lshw -C display
-lspci | grep VGA
+```
+
+### Verify that the GPU is CUDA-capable
+
+```sh
 lspci | grep -i nvidia
+```
+
+### Show information about the GPU
+
+```sh
+lspci | grep VGA
 nvidia-smi
 ```
 
@@ -36,10 +46,40 @@ grep -rn "<string>" <file(s)>
 ```sh
 find . -printf "%f\n" | sort
 ```
+or
+```sh
+ls -1
+```
 
 ### Add a user
 
 ```sh
 sudo useradd -s /bin/bash -d /home/<username>/ -m <username>
 sudo passwd <username>
+```
+
+### Show Linux distro, version, and architecture
+
+```sh
+uname -m && cat /etc/*release
+```
+
+### Show Linux kernel version
+
+```sh
+uname -r
+```
+
+## Misc.
+
+### Hash functions
+
+```sh
+sha256sum <filename>
+md5sum <filename>
+```
+
+### Batch-resize a collection of images
+```sh
+find . -maxdepth 1 -iname "*.jpg" | xargs -L1 -I{} convert -resize 30% "{}" _resized/"{}"
 ```

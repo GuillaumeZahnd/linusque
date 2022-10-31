@@ -1,0 +1,47 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "normal",
+    "current_border_width": 2,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 434,
+       "width": 734,
+       "x": 0,
+       "y": 0
+    },
+    "name": "guillaume@canaveral: ~",
+    "percent": 0.5,
+    "swallows": [
+       {
+       // "class": "^Gnome\\-terminal$",
+       // "instance": "^gnome\\-terminal\\-server$",
+       // "title": "^guillaume\\@canaveral\\:\\ \\~$",
+       // "window_role": "^gnome\\-terminal\\-window\\-ceb277d6\\-d35f\\-4ae0\\-b954\\-2adc43635136$"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    "border": "normal",
+    "current_border_width": 2,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 434,
+       "width": 734,
+       "x": 0,
+       "y": 0
+    },
+    "name": "guillaume@canaveral: ~",
+    "percent": 0.5,
+    "swallows": [
+       {
+       // "class": "^Gnome\\-terminal$",
+       // "instance": "^gnome\\-terminal\\-server$",
+       // "title": "^guillaume\\@canaveral\\:\\ \\~$",
+       // "window_role": "^gnome\\-terminal\\-window\\-2e073541\\-13cb\\-4cc5\\-a29a\\-a65c26e4edb8$"
+       }
+    ],
+    "type": "con"
+}
+

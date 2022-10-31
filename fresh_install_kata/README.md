@@ -1,15 +1,11 @@
 # Guide: Fresh install kata
 
----
-
-### Before installation: Create a bootable USB drive
+## Before installation: Create a bootable USB drive
 
 - usb-creator-gtk
 - UNetbootin
 
----
-
-### During installation: Apply partitioning
+## During installation: Apply partitioning
 
 - `/`: ext4, 50-100GB, Primary, Beginning of this space
 - `/home`: ext4, Primary, Beginning of this space
@@ -17,8 +13,6 @@
 - `efi`: 650MB, Primary, Beginning of this space
 
 To boot from USB: Go to BIOS and change from "Legacy" to "UEFI"
-
----
 
 ## After installation: Update, upgrade, autoremove
 
@@ -30,7 +24,11 @@ sudo apt autoclean
 sudo reboot
 ```
 
----
+### Install the kernel headers and development packages
+
+```sh
+sudo apt-get install linux-headers-$(uname -r)
+```
 
 ## Misc.
 
@@ -86,8 +84,6 @@ sudo apt install openssh-server
 ```sh
 sudo apt install cifs-utils smbclient
 ```
-
----
 
 ## Deep learning
 
