@@ -5,14 +5,14 @@
 - usb-creator-gtk
 - UNetbootin
 
-## During installation: Apply partitioning
+## During installation: Partition the disc(s)
 
 - `/`: ext4, 50-100GB, Primary, Beginning of this space
 - `/home`: ext4, Primary, Beginning of this space
-- `swap`: (obsolete, now replaced by a "swap" file within "/root")
 - `efi`: 650MB, Primary, Beginning of this space
+- `swap`: (obsolete, now replaced by a "swap" file within "/root")
 
-To boot from USB: Go to BIOS and change from "Legacy" to "UEFI"
+To boot from USB: Go to BIOS and change from `Legacy` to `UEFI`
 
 ## After installation: Update, upgrade, autoremove
 
@@ -27,7 +27,7 @@ sudo reboot
 ### Install the kernel headers and development packages
 
 ```sh
-sudo apt-get install linux-headers-$(uname -r)
+sudo apt install linux-headers-$(uname -r)
 ```
 
 ## Misc.
@@ -64,7 +64,7 @@ sudo apt install nemo net-tools
 ### Install (utils)
 
 ```sh
-sudo apt install gimp inkscape meld
+sudo apt install gimp inkscape meld ristretto
 ```
 
 ### Install development tools
@@ -85,61 +85,10 @@ sudo apt install openssh-server
 sudo apt install cifs-utils smbclient
 ```
 
-## Deep learning
-
 ### Install Python 3
 
 ```sh
-sudo apt install python3 python3-wheel python3-pip python3-venv python3-dev python3-setuptools
-```
-
-### Install NVIDIA drivers on Ubuntu
-
-```sh
-ubuntu-drivers devices
-sudo ubuntu-drivers autoinstall
-sudo reboot
-```
-Note: instead of `autoinstall`, a specific version can be selected:
-```sh
-sudo ubuntu-drivers nvidia-drivers-<version>
-```
-
-### Install the CUDA toolkit
-
-- https://pytorch.org/get-started/locally/ (verify first the compatible versions of PyTorch with the CUDA toolkit)
-- https://developer.nvidia.com/cuda-downloads
-- https://developer.nvidia.com/cuda-toolkit-archive
-- https://docs.nvidia.com/cuda/cuda-installation-guide-linux (comprehensive guide)
-
-```sh
-sudo reboot
-```
-
-Try:
-```sh
-nvcc -V
-```
-If the command is not recognized and the following error message shows up:
-> Command 'nvcc' not found, but can be installed with:
-> sudo apt install nvidia-cuda-toolkit
-
-Append:
-```sh
-export PATH="/usr/local/cuda/bin:$PATH"
-export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
-```
-To `~/.bashrc`
-
-### Install cuDNN
-
-- https://developer.nvidia.com/cudnn
-- https://developer.nvidia.com/rdp/cudnn-archive
-- https://docs.nvidia.com/cuda/cuda-installation-guide-linux (comprehensive guide)
-- https://docs.nvidia.com/deeplearning/cudnn/support-matrix/index.html (shows association between "cuDNN Package" and "CUDA Toolkit Version")
-
-```sh
-sudo reboot
+sudo apt install python3 python3-wheel python3-venv python3-dev python3-setuptools
 ```
 
 ### Install pip
@@ -167,3 +116,77 @@ export PATH="${HOME}/.local/bin:$PATH"
 ```
 To `~/.bashrc`
 
+## Deep learning and GPU-related
+
+### Install NVIDIA drivers on Ubuntu
+
+```sh
+ubuntu-drivers devices
+sudo ubuntu-drivers autoinstall
+sudo reboot
+nvidia-smi
+```
+Note: instead of `autoinstall`, a specific version can be selected:
+```sh
+sudo apt install nvidia-driver-<version>
+```
+**[curiosity] For Ubuntu 20.04.5 LTS (Focal Fossa) 5.15.0-52-generic &rarr; driver version 510**
+```
+sudo apt install nvidia-driver-510 nvidia-dkms-510
+```
+
+### Install the CUDA toolkit
+
+- https://pytorch.org/get-started/locally/ (verify first the compatible versions of PyTorch with the CUDA toolkit)
+- https://developer.nvidia.com/cuda-downloads
+- https://developer.nvidia.com/cuda-toolkit-archive
+- https://docs.nvidia.com/cuda/cuda-installation-guide-linux (comprehensive guide)
+
+**[curiosity] For Ubuntu 20.04.5 LTS (Focal Fossa) 5.15.0-52-generic &rarr; CUDA 11.6**
+
+```sh
+sudo reboot
+```
+
+Try:
+```sh
+nvcc -V
+```
+If the command is not recognized and the following error message shows up:
+> Command 'nvcc' not found, but can be installed with:
+> sudo apt install nvidia-cuda-toolkit
+
+Append:
+```sh
+export PATH="/usr/local/cuda/bin:$PATH"
+export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
+```
+To `~/.bashrc`
+
+### Install cuDNN
+
+- https://developer.nvidia.com/cudnn
+- https://developer.nvidia.com/rdp/cudnn-archive
+- https://docs.nvidia.com/cuda/cuda-installation-guide-linux (comprehensive guide)
+- https://docs.nvidia.com/deeplearning/cudnn/support-matrix/index.html (shows association between "cuDNN Package" and "CUDA Toolkit Version")
+
+**[curiosity] For Ubuntu 20.04.5 LTS (Focal Fossa) 5.15.0-52-generic &rarr; cuDNN v8.6.0 (October 3rd, 2022), for CUDA 11.x**
+
+```sh
+sudo reboot
+```
+
+### Install PyTorch
+
+- https://pytorch.org/get-started/locally/
+- https://pytorch.org/get-started/previous-versions/
+
+Try:
+```sh
+python -c "import torch; print(torch.__version__)"
+```
+
+**[curiosity] For Ubuntu 20.04.5 LTS (Focal Fossa) 5.15.0-52-generic &rarr; PyTorch 1.13.0**
+```sh
+pip3 install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu116
+```

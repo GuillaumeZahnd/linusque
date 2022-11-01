@@ -83,3 +83,8 @@ md5sum <filename>
 ```sh
 find . -maxdepth 1 -iname "*.jpg" | xargs -L1 -I{} convert -resize 30% "{}" _resized/"{}"
 ```
+
+### Firefox from ssh host
+```sh
+firefox --no-remote &
+```
