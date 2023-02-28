@@ -26,9 +26,19 @@ nvidia-smi
 ```
 
 ### Show where the open-source Nouveau drivers or the proprietary NVIDIA drivers are used
+
 ```sh
 lsmod | grep nouveau
 lsmod | grep nvidia
+```
+
+### Change the default Python version
+
+```sh
+update-alternatives --list python
+update-alternatives --install /usr/bin/python python /usr/bin/pythonX.Y 1
+update-alternatives --config python
+python -V
 ```
 
 ### Search for a string
@@ -36,6 +46,7 @@ lsmod | grep nvidia
 ```sh
 grep -rn "<string>" <file(s)>
 ```
+
 `n`: show line number<br>
 `r`: recursive search<br>
 `i`: ignore case sensitivity<br>
@@ -46,7 +57,9 @@ grep -rn "<string>" <file(s)>
 ```sh
 find . -printf "%f\n" | sort
 ```
+
 or
+
 ```sh
 ls -1
 ```
@@ -69,8 +82,6 @@ uname -m && cat /etc/*release
 ```sh
 uname -r
 ```
-
-## Misc.
 
 ### Hash functions
 
