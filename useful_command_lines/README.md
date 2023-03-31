@@ -52,6 +52,14 @@ grep -rn "<string>" <file(s)>
 `i`: ignore case sensitivity<br>
 `w`: whole words only
 
+
+### List all files contained in `DIR` recursively, sort it in descending order, and show only the `N` first results
+
+```
+du -ah DIR/ | sort -rh | head -N
+```
+
+
 ### Simple listing of the current folder content
 
 ```sh
