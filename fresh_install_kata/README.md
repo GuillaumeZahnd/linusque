@@ -165,16 +165,29 @@ To `~/.bashrc`
 
 ### Install cuDNN
 
+Comprehensive guide with prerequisites:
+
+- https://docs.nvidia.com/deeplearning/cudnn/install-guide/index.html#prerequisites
+
+Support matrix (shows association between "cuDNN Package" and "CUDA Toolkit Version")
+
+- https://docs.nvidia.com/deeplearning/cudnn/support-matrix/index.html 
+
+Download page:
+
 - https://developer.nvidia.com/cudnn
 - https://developer.nvidia.com/rdp/cudnn-archive
-- https://docs.nvidia.com/cuda/cuda-installation-guide-linux (comprehensive guide)
-- https://docs.nvidia.com/deeplearning/cudnn/support-matrix/index.html (shows association between "cuDNN Package" and "CUDA Toolkit Version")
 
 **[curiosity] For Ubuntu 20.04.5 LTS (Focal Fossa) 5.15.0-52-generic &rarr; cuDNN v8.6.0 (October 3rd, 2022), for CUDA 11.x**
 
 ```sh
 sudo reboot
 ```
+
+Verify whether installation was successful:
+
+- https://docs.nvidia.com/deeplearning/cudnn/install-guide/index.html#verify
+- If required, run `sudo apt-get install libfreeimage3 libfreeimage-dev`
 
 ### Install PyTorch
 
