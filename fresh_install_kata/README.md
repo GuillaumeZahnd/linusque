@@ -178,7 +178,7 @@ Download page:
 - https://developer.nvidia.com/cudnn
 - https://developer.nvidia.com/rdp/cudnn-archive
 
-**[curiosity] For Ubuntu 20.04.5 LTS (Focal Fossa) 5.15.0-52-generic &rarr; cuDNN v8.6.0 (October 3rd, 2022), for CUDA 11.x**
+**[curiosity] For Ubuntu 22.04.2 LTS (Jammy Jellyfish) 5.19.0-41-generic &rarr; cuDNN v8.9.0 (April 11th, 2023), for CUDA 11.x**
 
 ```sh
 sudo reboot
