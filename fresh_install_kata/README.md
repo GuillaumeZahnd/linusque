@@ -207,7 +207,7 @@ Try:
 python -c "import torch; print(torch.__version__)"
 ```
 
-**[curiosity] For Ubuntu 20.04.5 LTS (Focal Fossa) 5.15.0-52-generic &rarr; PyTorch 1.13.0**
+**[curiosity] For Ubuntu 22.04.2 LTS (Jammy Jellyfish) 5.19.0-41-generic &rarr; PyTorch 2.0.0**
 ```sh
-pip3 install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu116
+pip3 install torch torchvision torchaudio
 ```
