@@ -126,13 +126,13 @@ sudo ubuntu-drivers autoinstall
 sudo reboot
 nvidia-smi
 ```
-Note: instead of `autoinstall`, a specific version can be selected:
+Note: instead of `autoinstall`, a specific version can be selected (usually, the "recommended" version without the `-open` tag):
 ```sh
 sudo apt install nvidia-driver-<version>
 ```
-**[curiosity] For Ubuntu 20.04.5 LTS (Focal Fossa) 5.15.0-52-generic &rarr; driver version 510**
+**[curiosity] For Ubuntu 22.04.2 LTS (Jammy Jellyfish) 5.19.0-41-generic &rarr; driver version 530**
 ```
-sudo apt install nvidia-driver-510 nvidia-dkms-510
+sudo apt install nvidia-driver-530
 ```
 
 ### Install the CUDA toolkit
