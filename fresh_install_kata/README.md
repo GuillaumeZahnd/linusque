@@ -169,6 +169,14 @@ Comprehensive guide with prerequisites:
 
 - https://docs.nvidia.com/deeplearning/cudnn/install-guide/index.html#prerequisites
 
+*Note:* When entering the following command ...
+
+```sh
+sudo apt-get install libcudnn8=8.x.x.x-1+cudaX.Y
+```
+
+... the CUDA version `X.Y` is not the CUDA version installed on the machine (visible with `nvidia-smi` or `nvcc -V`), but the CUDA version corresponding to the downloaded CuDNN version (visible within the folder `/var/cudnn-local-xxx`).
+
 Support matrix (shows association between "cuDNN Package" and "CUDA Toolkit Version")
 
 - https://docs.nvidia.com/deeplearning/cudnn/support-matrix/index.html 
