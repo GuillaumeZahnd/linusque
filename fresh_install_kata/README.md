@@ -130,7 +130,7 @@ Note: instead of `autoinstall`, a specific version can be selected (usually, the
 ```sh
 sudo apt install nvidia-driver-<version>
 ```
-**[curiosity] For Ubuntu 22.04.2 LTS (Jammy Jellyfish) 5.19.0-41-generic &rarr; driver version 530**
+**[curiosity] For Ubuntu 22.04.2 LTS (Jammy Jellyfish) 5.19.0-41-generic &rarr; NVIDIA driver version 530**
 ```
 sudo apt install nvidia-driver-530
 ```
@@ -142,7 +142,7 @@ sudo apt install nvidia-driver-530
 - https://developer.nvidia.com/cuda-toolkit-archive
 - https://docs.nvidia.com/cuda/cuda-installation-guide-linux (comprehensive guide)
 
-**[curiosity] For Ubuntu 20.04.5 LTS (Focal Fossa) 5.15.0-52-generic &rarr; CUDA 11.6**
+**[curiosity] For Ubuntu 22.04.2 LTS (Jammy Jellyfish) 5.19.0-41-generic &rarr; CUDA Toolkit version 11.7.1**
 
 ```sh
 sudo reboot
