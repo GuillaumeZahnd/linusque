@@ -152,11 +152,11 @@ font pango:monospace 8
 # ----------------------------------------------------------------
 # Startup routine
 # ----------------------------------------------------------------
-exec_always --no-startup-id xsetroot -solid '#000000'         # black desktop background
-exec_always --no-startup-id numlockx on                       # activate numlock (useless when using a 65% keeb)
-exec /home/guillaume/LINUX/mouse_btn_132/xmodmap_on.sh        # swap mouse buttons
-exec /home/guillaume/LINUX/i3/three-monitors-arandr-layout.sh # set the left/center/right monitors
-exec /home/guillaume/LINUX/i3/no_idle_monitor.sh              # disable screensaver
+exec_always --no-startup-id xsetroot -solid '#000000' # black desktop background
+exec_always --no-startup-id numlockx on # activate numlock (useless when using a 65% keeb)
+exec --no-startup-id /home/guillaume/LINUX/mouse_btn_132/xmodmap_on.sh # swap mouse buttons
+exec --no-startup-id /home/guillaume/LINUX/i3/three-monitors-arandr-layout.sh # set the left/center/right monitors
+exec --no-startup-id /home/guillaume/LINUX/i3/no_idle_monitor.sh # disable screensaver
 # 1
 exec --no-startup-id i3-msg 'workspace 1; append_layout /home/guillaume/.config/i3/workspace-1.json'
 exec --no-startup-id i3-msg 'sh -c sleep 10'
