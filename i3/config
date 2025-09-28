@@ -157,34 +157,28 @@ exec_always --no-startup-id numlockx on # activate numlock (useless when using a
 exec --no-startup-id /home/guillaume/LINUX/mouse_btn_132/xmodmap_on.sh # swap mouse buttons
 exec --no-startup-id /home/guillaume/LINUX/i3/three-monitors-arandr-layout.sh # set the left/center/right monitors
 exec --no-startup-id /home/guillaume/LINUX/i3/no_idle_monitor.sh # disable screensaver
-# 1
-exec --no-startup-id i3-msg 'workspace 1; append_layout /home/guillaume/.config/i3/workspace-1.json'
-exec --no-startup-id i3-msg 'sh -c sleep 10'
-exec --no-startup-id i3-msg 'workspace 1; exec firefox'
 # 2
-exec --no-startup-id i3-msg 'workspace 2; append_layout /home/guillaume/.config/i3/workspace-2.json'
-exec --no-startup-id i3-msg 'sh -c sleep 10'
-exec --no-startup-id i3-msg 'workspace 2; exec i3-sensible-terminal'
-exec --no-startup-id i3-msg 'workspace 2; exec i3-sensible-terminal'
+#exec --no-startup-id "i3-msg 'workspace 2; append_layout /home/guillaume/.config/i3/workspace-2.json'"
+#exec --no-startup-id "i3-msg 'workspace 2; exec thunar && sleep 100'"
+#exec --no-startup-id "i3-msg 'workspace 2; exec thunar && sleep 100'"
+#exec --no-startup-id "i3-msg 'workspace 2; exec thunar && sleep 100'"
+#exec --no-startup-id "i3-msg 'workspace 2; exec thunar && sleep 100'"
 # 3
-exec --no-startup-id i3-msg 'workspace 3; append_layout /home/guillaume/.config/i3/workspace-3.json'
-exec --no-startup-id i3-msg 'sh -c sleep 10'
-exec --no-startup-id i3-msg 'workspace 3; exec i3-sensible-terminal'
-exec --no-startup-id i3-msg 'workspace 3; exec i3-sensible-terminal'
+workspace 3 output DP-0.1.8
+exec --no-startup-id "i3-msg 'workspace 3; append_layout /home/guillaume/.config/i3/workspace-3.json'"
+exec --no-startup-id "i3-msg 'workspace 3; exec i3-sensible-terminal && sleep 100'"
+exec --no-startup-id "i3-msg 'workspace 3; exec i3-sensible-terminal && sleep 100'"
 # 4
-exec --no-startup-id i3-msg 'workspace 4; append_layout /home/guillaume/.config/i3/workspace-4.json'
-exec --no-startup-id i3-msg 'sh -c sleep 10'
-exec --no-startup-id i3-msg 'workspace 4; exec thunar'
-exec --no-startup-id i3-msg 'workspace 4; exec thunar'
-exec --no-startup-id i3-msg 'workspace 4; exec thunar'
-exec --no-startup-id i3-msg 'workspace 4; exec thunar'
+workspace 4 output DP-0.8
+exec --no-startup-id "i3-msg 'workspace 4; append_layout /home/guillaume/.config/i3/workspace-4.json'"
+exec --no-startup-id "i3-msg 'workspace 4; exec i3-sensible-terminal && sleep 100'"
+exec --no-startup-id "i3-msg 'workspace 4; exec i3-sensible-terminal && sleep 100'"
 # 5
-exec --no-startup-id i3-msg 'workspace 5; append_layout /home/guillaume/.config/i3/workspace-5.json'
-exec --no-startup-id i3-msg 'sh -c sleep 10'
-exec --no-startup-id i3-msg 'workspace 5; exec i3-sensible-terminal'
-exec --no-startup-id i3-msg 'workspace 5; exec i3-sensible-terminal'
-# 6
-exec --no-startup-id i3-msg 'workspace 6; append_layout /home/guillaume/.config/i3/workspace-6.json'
-exec --no-startup-id i3-msg 'sh -c sleep 10'
-exec --no-startup-id i3-msg 'workspace 6; exec i3-sensible-terminal'
-exec --no-startup-id i3-msg 'workspace 6; exec i3-sensible-terminal'
+workspace 5 output DP-2.8
+exec --no-startup-id "i3-msg 'workspace 5; append_layout /home/guillaume/.config/i3/workspace-5.json'"
+exec --no-startup-id "i3-msg 'workspace 5; exec i3-sensible-terminal && sleep 100'"
+exec --no-startup-id "i3-msg 'workspace 5; exec i3-sensible-terminal && sleep 100'"
+# 1
+workspace 1 output DP-0.8
+exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/guillaume/.config/i3/workspace-1.json'"
+exec --no-startup-id "i3-msg 'workspace 1; exec firefox && sleep 100'"
