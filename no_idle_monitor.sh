@@ -1,3 +1,4 @@
 #!/bin/bash
-xset s off     # turns off the screen saver
-xset s noblank # turns off blanking
+xset -display :0.0 -dpms
+xset -display :0.0 s off
+xset -display :0.0 s noblank
