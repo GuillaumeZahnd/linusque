@@ -63,16 +63,11 @@ bindsym $mod+q focus parent
 # Focus on the child container
 bindsym $mod+g focus child
 
-# Resize window (using keys instead of the mouse)
-bindsym $mod+r mode "resize"
-mode "resize" {
-  bindsym Left resize shrink width 10 px or 10 ppt  # shrink the width
-  bindsym Right resize grow width 10 px or 10 ppt   # grow the width
-  bindsym Down resize shrink height 10 px or 10 ppt # shrink the height
-  bindsym Up resize grow height 10 px or 10 ppt     # grow the height
-  bindsym Return mode "default"                     # exit the resize mode
-  bindsym Escape mode "default"                     # exit the resier more
-}
+# Resize window
+bindsym $mod+Ctrl+Right resize grow width 100
+bindsym $mod+Ctrl+Up resize shrink height 100
+bindsym $mod+Ctrl+Down resize grow height 100
+bindsym $mod+Ctrl+Left resize shrink width 100
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
