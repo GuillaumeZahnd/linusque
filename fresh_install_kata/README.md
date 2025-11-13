@@ -142,7 +142,9 @@ sudo apt install nvidia-driver-530
 - https://developer.nvidia.com/cuda-toolkit-archive
 - https://docs.nvidia.com/cuda/cuda-installation-guide-linux (comprehensive guide)
 
-**[curiosity] For Ubuntu 22.04.2 LTS (Jammy Jellyfish) 5.19.0-41-generic &rarr; CUDA Toolkit version 11.7.1**
+https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=24.04&target_type=deb_local
+
+https://docs.nvidia.com/cuda/cuda-installation-guide-linux/#why-do-i-see-nvcc-no-such-file-or-directory-when-i-try-to-build-a-cuda-application
 
 ```sh
 sudo reboot
