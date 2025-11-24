@@ -130,7 +130,7 @@ Note: instead of `autoinstall`, a specific version can be selected (usually, the
 ```sh
 sudo apt install nvidia-driver-<version>
 ```
-**[curiosity] For Ubuntu 22.04.2 LTS (Jammy Jellyfish) 5.19.0-41-generic &rarr; NVIDIA driver version 530**
+
 ```
 sudo apt install nvidia-driver-530
 ```
@@ -188,7 +188,6 @@ Download page:
 - https://developer.nvidia.com/cudnn
 - https://developer.nvidia.com/rdp/cudnn-archive
 
-**[curiosity] For Ubuntu 22.04.2 LTS (Jammy Jellyfish) 5.19.0-41-generic &rarr; cuDNN v8.9.0 (April 11th, 2023), for CUDA 11.x**
 
 ```sh
 sudo reboot
@@ -209,7 +208,6 @@ Try:
 python -c "import torch; print(torch.__version__)"
 ```
 
-**[curiosity] For Ubuntu 22.04.2 LTS (Jammy Jellyfish) 5.19.0-41-generic &rarr; PyTorch 2.0.0**
 ```sh
 pip3 install torch torchvision torchaudio
 ```
